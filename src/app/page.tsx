@@ -1,9 +1,11 @@
+import About from '@/components/About'
 import Hero from '@/components/Hero'
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <Hero />
+      <About />
       
       {/* Placeholder sections for future development */}
       {/* <div id="projects" className="min-h-screen bg-gray-100 flex items-center justify-center">
