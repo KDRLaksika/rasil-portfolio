@@ -141,7 +141,7 @@ const Hero = () => {
                     alt="Rasil Laksika"
                     width={400}
                     height={400}
-                    className="w-full h-full object-fill"
+                    style={{ objectFit: "cover" }}
                   />
                   }
                 </div>

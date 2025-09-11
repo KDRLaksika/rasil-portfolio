@@ -9,7 +9,7 @@ const Projects = () => {
       id: 1,
       title: "E-comWeb",
       description: "I built a fully functional E-commerce website using HTML, CSS, Bootstrap, PHP, and MySQL. It was an amazing experience that helped me understand the fundamentals of web development, backend integration, and user interface design.",
-      image: "/projects/e-comweb-screenshot.jpg", // Placeholder for your screenshot
+      image: "/projects/EcomWeb.png", // Placeholder for your screenshot
       techStack: [
         { name: "HTML", color: "bg-orange-600", icon: "🌐" },
         { name: "CSS", color: "bg-blue-500", icon: "🎨" },
@@ -32,7 +32,7 @@ const Projects = () => {
         "Business Intelligence with monthly billing analysis",
         "Advanced database elements: stored procedures, views, functions, and triggers"
       ],
-      image: "/projects/hospital-management-screenshot.jpg", // Placeholder for your screenshot
+      image: "/projects/Hospital.png", // Placeholder for your screenshot
       techStack: [
         { name: "Python", color: "bg-green-500", icon: "🐍" },
         { name: "Streamlit", color: "bg-red-500", icon: "⚡" },
@@ -55,7 +55,7 @@ const Projects = () => {
         "Error handling for invalid input or failed API requests",
         "Modular file structure with React Context API for state management"
       ],
-      image: "/projects/gemini-clone-screenshot.jpg", // Placeholder for your screenshot
+      image: "/projects/Gemini.png", // Placeholder for your screenshot
       techStack: [
         { name: "React.js", color: "bg-cyan-400", icon: "⚛️" },
         { name: "Node.js", color: "bg-green-600", icon: "🟢" },
@@ -77,7 +77,7 @@ const Projects = () => {
         "Inventory tracking system",
         "Persistent shopping cart using local storage"
       ],
-      image: "/projects/crystal-beauty-screenshot.jpg", // Placeholder for your screenshot
+      image: "/projects/Crystal.png", // Placeholder for your screenshot
       techStack: [
         { name: "React.js", color: "bg-cyan-400", icon: "⚛️" },
         { name: "Node.js", color: "bg-green-600", icon: "🟢" },
@@ -122,17 +122,14 @@ const Projects = () => {
             <div key={project.id} className="glass-effect rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-blue-500/20 transform hover:scale-[1.02] transition-all duration-500 group">
               {/* Project Image */}
               <div className="relative h-64 bg-gradient-to-br from-gray-800 to-gray-900 overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-r from-[var(--accent-primary)] to-[var(--accent-secondary)] rounded-full flex items-center justify-center text-2xl mb-4 mx-auto">
-                      📸
-                    </div>
-                    <p className="text-[var(--text-secondary)] text-sm">
-                      Screenshot Placeholder<br/>
-                      <span className="text-xs">Add your project image here</span>
-                    </p>
-                  </div>
-                </div>
+                <Image
+                  src={project.image}
+                  alt={project.title + " screenshot"}
+                  fill
+                  style={{ objectFit: "cover" }}
+                  className="transition-opacity duration-300 group-hover:opacity-80"
+                  priority={index === 0}
+                />
                 {/* Image overlay on hover */}
                 <div className="absolute inset-0 bg-gradient-to-r from-[var(--accent-primary)]/20 to-[var(--accent-secondary)]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
