@@ -83,7 +83,14 @@ const Skills = () => {
     }
   ]
 
-  const getLevelBadge = (level) => {
+  interface LevelBadge {
+    text: string;
+    color: string;
+  }
+
+  type SkillLevel = 'expert' | 'intermediate' | 'learning' | 'beginner';
+
+  const getLevelBadge = (level: SkillLevel): LevelBadge => {
     switch(level) {
       case 'expert':
         return { text: 'Expert', color: 'bg-green-500/20 text-green-400 border-green-400/30' }
@@ -173,8 +180,8 @@ const Skills = () => {
                         {skill.name.charAt(0)}
                       </div>
                       <h4 className="text-[var(--text-primary)] font-medium mb-2">{skill.name}</h4>
-                      <span className={`inline-block px-2 py-1 rounded-full text-xs font-medium border ${getLevelBadge(skill.level).color}`}>
-                        {getLevelBadge(skill.level).text}
+                      <span className={`inline-block px-2 py-1 rounded-full text-xs font-medium border ${getLevelBadge(skill.level as SkillLevel).color}`}>
+                        {getLevelBadge(skill.level as SkillLevel).text}
                       </span>
                     </div>
 

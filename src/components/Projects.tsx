@@ -91,8 +91,39 @@ const Projects = () => {
     }
   ]
 
-  const openLink = (url) => {
-    window.open(url, '_blank', 'noopener,noreferrer')
+  interface TechStackItem {
+    name: string;
+    color: string;
+    icon: string;
+  }
+
+  interface SingleProject {
+    id: number;
+    title: string;
+    description: string;
+    image: string;
+    techStack: TechStackItem[];
+    githubLink: string;
+    type: 'single';
+    features?: string[];
+  }
+
+  interface SplitProject {
+    id: number;
+    title: string;
+    description: string;
+    image: string;
+    techStack: TechStackItem[];
+    frontendLink: string;
+    backendLink: string;
+    type: 'split';
+    features?: string[];
+  }
+
+  type Project = SingleProject | SplitProject;
+
+  const openLink = (url: string) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
   }
 
   return (
@@ -186,7 +217,7 @@ const Projects = () => {
                 <div className="flex gap-4">
                   {project.type === 'single' ? (
                     <button
-                      onClick={() => openLink(project.githubLink)}
+                      onClick={() => project.githubLink && openLink(project.githubLink)}
                       className="flex items-center px-6 py-3 bg-gradient-to-r from-[var(--accent-primary)] to-[var(--accent-secondary)] text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300"
                     >
                       <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
@@ -197,7 +228,7 @@ const Projects = () => {
                   ) : (
                     <>
                       <button
-                        onClick={() => openLink(project.frontendLink)}
+                        onClick={() => project.frontendLink && openLink(project.frontendLink)}
                         className="flex items-center px-4 py-3 bg-gradient-to-r from-[var(--accent-primary)] to-[var(--accent-secondary)] text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300 text-sm"
                       >
                         <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
@@ -206,7 +237,7 @@ const Projects = () => {
                         Frontend Code
                       </button>
                       <button
-                        onClick={() => openLink(project.backendLink)}
+                        onClick={() => project.backendLink && openLink(project.backendLink)}
                         className="flex items-center px-4 py-3 glass-effect text-[var(--text-primary)] font-semibold rounded-xl hover:bg-white/10 transform hover:scale-105 transition-all duration-300 text-sm border border-[var(--accent-primary)]/30"
                       >
                         <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">

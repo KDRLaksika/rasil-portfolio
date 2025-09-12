@@ -41,7 +41,19 @@ const Header = () => {
   }, [])
 
   // Handle smooth scrolling
-  const handleNavClick = (e, href, id) => {
+  interface NavClickEvent extends React.MouseEvent<HTMLAnchorElement | HTMLButtonElement> {}
+
+  interface NavClickParams {
+    e: NavClickEvent;
+    href: string;
+    id: string;
+  }
+
+  const handleNavClick = (
+    e: NavClickEvent,
+    href: string,
+    id: string
+  ): void => {
     e.preventDefault()
     setIsMenuOpen(false)
     
@@ -64,15 +76,21 @@ const Header = () => {
 
   // Close mobile menu when clicking outside
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (isMenuOpen && !event.target.closest('.mobile-menu') && !event.target.closest('.hamburger-button')) {
-        setIsMenuOpen(false)
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (
+        isMenuOpen &&
+        target &&
+        !target.closest('.mobile-menu') &&
+        !target.closest('.hamburger-button')
+      ) {
+        setIsMenuOpen(false);
       }
-    }
+    };
 
-    document.addEventListener('click', handleClickOutside)
-    return () => document.removeEventListener('click', handleClickOutside)
-  }, [isMenuOpen])
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [isMenuOpen]);
 
   // Prevent body scroll when menu is open
   useEffect(() => {

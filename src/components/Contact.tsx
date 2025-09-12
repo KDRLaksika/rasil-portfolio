@@ -14,7 +14,24 @@ const Contact = () => {
   })
 
   // Form validation
-  const validateEmail = (email) => {
+  interface FormData {
+    user_name: string;
+    user_email: string;
+    message: string;
+  }
+
+  interface ShowMessage {
+    show: boolean;
+    type: string;
+    message: string;
+  }
+
+  interface ValidationResult {
+    isValid: boolean;
+    message: string;
+  }
+
+  const validateEmail = (email: string): boolean => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
   }
 
@@ -35,7 +52,9 @@ const Contact = () => {
   }
 
   // Handle input changes
-  const handleChange = (e) => {
+  interface HandleChangeEvent extends React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> {}
+
+  const handleChange = (e: HandleChangeEvent): void => {
     const { name, value } = e.target
     setFormData(prev => ({
       ...prev,
@@ -48,10 +67,15 @@ const Contact = () => {
   }
 
   // Handle form submission
-  const sendEmail = async (e) => {
+  interface EmailJSResult {
+    text: string;
+    status: number;
+  }
+
+  const sendEmail = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault()
     
-    const validation = validateForm()
+    const validation: ValidationResult = validateForm()
     if (!validation.isValid) {
       setShowMessage({
         show: true,
@@ -65,9 +89,9 @@ const Contact = () => {
 
     try {
       // Replace these with your actual EmailJS credentials
-      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
-      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
-      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      const serviceId: string | undefined = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
+      const templateId: string | undefined = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+      const publicKey: string | undefined = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
 
       if (!serviceId || !templateId || !publicKey) {
         throw new Error('EmailJS environment variables are not set.')
@@ -76,7 +100,7 @@ const Contact = () => {
       if (!form.current) {
         throw new Error('Form reference is not available.');
       }
-      const result = await emailjs.sendForm(
+      const result: EmailJSResult = await emailjs.sendForm(
         serviceId,
         templateId,
         form.current,
@@ -99,7 +123,7 @@ const Contact = () => {
         message: ''
       })
 
-    } catch (error) {
+    } catch (error: unknown) {
       console.error('Failed to send email:', error)
       
       // Show error message
