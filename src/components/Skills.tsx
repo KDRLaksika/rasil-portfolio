@@ -219,7 +219,7 @@ const Skills = () => {
           <div className="glass-effect rounded-2xl p-8 max-w-4xl mx-auto">
             <h4 className="text-xl font-bold text-[var(--text-primary)] mb-4">Continuous Learning Journey</h4>
             <p className="text-[var(--text-secondary)] leading-relaxed">
-              As a passionate software engineer, I'm committed to staying updated with the latest technologies and best practices. 
+              As a passionate software engineer, I&#39;m committed to staying updated with the latest technologies and best practices. 
               Currently expanding my expertise in <span className="text-[var(--accent-primary)] font-semibold">cloud computing</span>, 
               <span className="text-[var(--accent-secondary)] font-semibold"> artificial intelligence</span>, and 
               <span className="gradient-text font-semibold"> modern development practices</span> to build more efficient and scalable solutions.

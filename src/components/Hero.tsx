@@ -49,7 +49,7 @@ const Hero = () => {
         <div className="lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0">
           <div className="mb-6">
             <h1 className="text-5xl lg:text-7xl font-bold text-[var(--text-primary)] mb-4">
-              Hi, I'm{' '}
+              Hi, I&#39;m{' '}
               <span className="gradient-text">
                 Rasil Laksika
               </span>

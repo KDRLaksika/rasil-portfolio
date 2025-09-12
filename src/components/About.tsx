@@ -59,7 +59,7 @@ const About = () => {
                 Professional Journey
               </h3>
               <p className="text-[var(--text-secondary)] leading-relaxed mb-4">
-                I'm a dedicated 3rd-year Software Engineering undergraduate at NSBM Green University with a strong passion for 
+                I&#39;m a dedicated 3rd-year Software Engineering undergraduate at NSBM Green University with a strong passion for 
                 <span className="text-[var(--accent-primary)] font-semibold"> MERN Stack development</span>. My journey in technology 
                 is driven by the desire to create scalable, efficient applications that solve real-world problems.
               </p>
@@ -69,7 +69,7 @@ const About = () => {
                 database management across multiple platforms.
               </p>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                I'm committed to applying my technical expertise to dynamic software development teams and contributing to innovative solutions 
+                I&#39;m committed to applying my technical expertise to dynamic software development teams and contributing to innovative solutions 
                 that make a meaningful impact.
               </p>
             </div>
@@ -160,10 +160,10 @@ const About = () => {
           </h3>
           <p className="text-[var(--text-secondary)] text-lg leading-relaxed max-w-4xl mx-auto">
             Currently seeking <span className="gradient-text font-bold">Software Engineering internship opportunities</span> where I can 
-            contribute to meaningful projects and continue growing as a developer. I'm excited about the future of technology, 
+            contribute to meaningful projects and continue growing as a developer. I&#39;m excited about the future of technology, 
             particularly in <span className="text-[var(--accent-primary)] font-semibold">AI/ML integration</span> and 
             <span className="text-[var(--accent-secondary)] font-semibold"> cloud-native development</span>. My goal is to be part of 
-            innovative teams that create solutions making a positive impact on people's lives.
+            innovative teams that create solutions making a positive impact on people&#39;s lives.
           </p>
         </div>
       </div>

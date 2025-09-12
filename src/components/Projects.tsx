@@ -229,13 +229,13 @@ const Projects = () => {
               Interested in My Work?
             </h3>
             <p className="text-[var(--text-secondary)] mb-6">
-              These projects showcase my journey in software development. I'm always working on new ideas and love to collaborate on interesting projects.
+              These projects showcase my journey in software development. I&#39;m always working on new ideas and love to collaborate on interesting projects.
             </p>
             <button 
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="px-8 py-4 bg-gradient-to-r from-[var(--accent-primary)] to-[var(--accent-secondary)] text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300"
             >
-              Let's Connect
+              Let&#39;s Connect
             </button>
           </div>
         </div>

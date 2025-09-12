@@ -135,8 +135,8 @@ const Contact = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-[var(--accent-primary)] to-[var(--accent-secondary)] mx-auto rounded-full mb-6"></div>
           <p className="text-[var(--text-secondary)] text-lg max-w-2xl mx-auto">
-            Have a project in mind or want to collaborate? I'd love to hear from you. 
-            Send me a message and let's create something amazing together.
+            Have a project in mind or want to collaborate? I&#39;d love to hear from you. 
+            Send me a message and let&#39;s create something amazing together.
           </p>
         </div>
 
