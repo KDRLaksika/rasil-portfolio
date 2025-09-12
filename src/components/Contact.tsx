@@ -4,7 +4,7 @@ import React, { useState, useRef } from 'react'
 import emailjs from '@emailjs/browser'
 
 const Contact = () => {
-  const form = useRef()
+  const form = useRef<HTMLFormElement>(null)
   const [isLoading, setIsLoading] = useState(false)
   const [showMessage, setShowMessage] = useState({ show: false, type: '', message: '' })
   const [formData, setFormData] = useState({
@@ -65,11 +65,22 @@ const Contact = () => {
 
     try {
       // Replace these with your actual EmailJS credentials
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error('EmailJS environment variables are not set.')
+      }
+
+      if (!form.current) {
+        throw new Error('Form reference is not available.');
+      }
       const result = await emailjs.sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,     // Replace with your service ID
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,    // Replace with your template ID
+        serviceId,
+        templateId,
         form.current,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY      // Replace with your public key
+        publicKey
       )
 
       console.log('Email sent successfully:', result.text)
