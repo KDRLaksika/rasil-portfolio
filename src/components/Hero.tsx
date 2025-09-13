@@ -65,7 +65,7 @@ const Hero = () => {
           <p className="text-lg text-[var(--text-secondary)] mb-8 max-w-2xl leading-relaxed">
             Passionate about creating <span className="text-[var(--accent-primary)] font-semibold">scalable applications</span> that solve real-world problems. 
             Experienced in <span className="text-[var(--accent-secondary)] font-semibold">MERN stack development</span> with a focus on secure, efficient solutions.
-            Currently seeking <span className="gradient-text font-semibold">Software Engineering internship</span> opportunities.
+            I&#39;m committed to applying my technical expertise to <span className="gradient-text font-semibold">dynamic software development teams</span> and contributing to innovative solutions that make a meaningful impact.
           </p>
 
           {/* Contact Info */}
