@@ -11,12 +11,12 @@ const About = () => {
   ]
 
   const skills = [
-    { name: 'MERN Stack Development', icon: '🚀', level: 90 },
-    { name: 'Database Management', icon: '🗄️', level: 85 },
-    { name: 'API Integration', icon: '🔗', level: 80 },
-    { name: 'Problem Solving', icon: '🧩', level: 95 },
-    { name: 'Project Management', icon: '📋', level: 75 },
-    { name: 'Team Collaboration', icon: '🤝', level: 88 }
+    { name: 'MERN Stack Development', icon: '🚀'},
+    { name: 'Database Management', icon: '🗄️'},
+    { name: 'API Integration', icon: '🔗'},
+    { name: 'Problem Solving', icon: '🧩'},
+    { name: 'Project Management', icon: '📋'},
+    { name: 'Team Collaboration', icon: '🤝'}
   ]
 
   const currentLearning = [
@@ -108,7 +108,7 @@ const About = () => {
 
             {/* Skills */}
             <div className="glass-effect rounded-2xl p-8 hover:shadow-2xl hover:shadow-green-500/10 transition-all duration-500">
-              <h3 className="text-2xl font-bold text-[var(--text-primary)] mb-6 flex items-center">
+              <h3 className="text-2xl font-bold text-[var(--text-primary)] mb-6 flex items-center py-3">
                 <span className="text-2xl mr-3">🎯</span>
                 Core Expertise
               </h3>
@@ -120,14 +120,14 @@ const About = () => {
                         <span className="text-xl mr-3">{skill.icon}</span>
                         <span className="text-[var(--text-primary)] font-medium">{skill.name}</span>
                       </div>
-                      <span className="text-[var(--accent-primary)] font-semibold">{skill.level}%</span>
+                      {/* <span className="text-[var(--accent-primary)] font-semibold">{skill.level}%</span> */}
                     </div>
-                    <div className="w-full bg-gray-700 rounded-full h-2">
+                    {/* <div className="w-full bg-gray-700 rounded-full h-2">
                       <div 
                         className="bg-gradient-to-r from-[var(--accent-primary)] to-[var(--accent-secondary)] h-2 rounded-full transition-all duration-1000 ease-out"
                         style={{ width: `${skill.level}%` }}
                       ></div>
-                    </div>
+                    </div> */}
                   </div>
                 ))}
               </div>
@@ -159,7 +159,7 @@ const About = () => {
             Goals & Vision
           </h3>
           <p className="text-[var(--text-secondary)] text-lg leading-relaxed max-w-4xl mx-auto">
-            Currently seeking <span className="gradient-text font-bold">Software Engineering internship opportunities</span> where I can 
+            I&#39;m committed to applying my technical expertise to <span className="gradient-text font-bold">dynamic software development teams</span> where I can 
             contribute to meaningful projects and continue growing as a developer. I&#39;m excited about the future of technology, 
             particularly in <span className="text-[var(--accent-primary)] font-semibold">AI/ML integration</span> and 
             <span className="text-[var(--accent-secondary)] font-semibold"> cloud-native development</span>. My goal is to be part of 

@@ -12,10 +12,10 @@ const Skills = () => {
       skills: [
         { name: 'Java', level: 'expert', color: 'bg-orange-500' },
         { name: 'JavaScript', level: 'expert', color: 'bg-yellow-500' },
-        { name: 'C', level: 'intermediate', color: 'bg-blue-600' },
+        { name: 'C', level: 'expert', color: 'bg-blue-600' },
         { name: 'PHP', level: 'intermediate', color: 'bg-purple-600' },
         { name: 'Python', level: 'learning', color: 'bg-green-500' },
-        { name: 'Dart', level: 'intermediate', color: 'bg-cyan-500' }
+        { name: 'Dart', level: 'expert', color: 'bg-cyan-500' }
       ]
     },
     'Frontend Development': {
@@ -26,7 +26,7 @@ const Skills = () => {
         { name: 'CSS', level: 'expert', color: 'bg-blue-500' },
         { name: 'React.js', level: 'expert', color: 'bg-cyan-400' },
         { name: 'Next.js', level: 'learning', color: 'bg-gray-800' },
-        { name: 'Bootstrap', level: 'intermediate', color: 'bg-purple-600' }
+        { name: 'Bootstrap', level: 'expert', color: 'bg-purple-600' }
       ]
     },
     'Backend Development': {
@@ -54,7 +54,7 @@ const Skills = () => {
         { name: 'Git', level: 'expert', color: 'bg-orange-600' },
         { name: 'Postman', level: 'expert', color: 'bg-orange-500' },
         { name: 'Flutter', level: 'intermediate', color: 'bg-blue-400' },
-        { name: 'Streamlit', level: 'intermediate', color: 'bg-red-500' }
+        { name: 'Streamlit', level: 'expert', color: 'bg-red-500' }
       ]
     },
     'Currently Learning': {
