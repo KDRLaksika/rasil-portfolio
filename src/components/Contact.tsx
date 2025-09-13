@@ -14,17 +14,17 @@ const Contact = () => {
   })
 
   // Form validation
-  interface FormData {
-    user_name: string;
-    user_email: string;
-    message: string;
-  }
+  // interface FormData {
+  //   user_name: string;
+  //   user_email: string;
+  //   message: string;
+  // }
 
-  interface ShowMessage {
-    show: boolean;
-    type: string;
-    message: string;
-  }
+  // interface ShowMessage {
+  //   show: boolean;
+  //   type: string;
+  //   message: string;
+  // }
 
   interface ValidationResult {
     isValid: boolean;
@@ -52,9 +52,7 @@ const Contact = () => {
   }
 
   // Handle input changes
-  interface HandleChangeEvent extends React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> {}
-
-  const handleChange = (e: HandleChangeEvent): void => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
     const { name, value } = e.target
     setFormData(prev => ({
       ...prev,

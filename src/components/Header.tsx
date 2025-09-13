@@ -38,16 +38,16 @@ const Header = () => {
 
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [navigationItems])
 
   // Handle smooth scrolling
-  interface NavClickEvent extends React.MouseEvent<HTMLAnchorElement | HTMLButtonElement> {}
+  type NavClickEvent = React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>;
 
-  interface NavClickParams {
-    e: NavClickEvent;
-    href: string;
-    id: string;
-  }
+  // interface NavClickParams {
+  //   e: NavClickEvent;
+  //   href: string;
+  //   id: string;
+  // }
 
   const handleNavClick = (
     e: NavClickEvent,
